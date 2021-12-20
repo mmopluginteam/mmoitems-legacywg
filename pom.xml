@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.Indyuce.mmoitems.comp.worldguard.legacy</groupId>
+    <artifactId>MMOItems-LegacyWG</artifactId>
+    <version>1.1</version>
+    <description>Necessity for WorldGuard/MMOItems users on legacy servers</description>
+
+    <build>
+        <finalName>${project.name}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+
+        <repository>
+            <id>nexus</id>
+            <url>https://mvn.lumine.io/repository/maven-public/</url>
+        </repository>
+
+        <!-- This adds the Spigot Maven repository to the build -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+    </repositories>
+
+    <dependencies>
+
+        <!--This adds the Spigot API artifact to the build -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.18-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.Indyuce</groupId>
+            <artifactId>MMOItems</artifactId>
+            <version>5.5.5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/MMOItems-5.5.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>net.mmogroup</groupId>
+            <artifactId>MMOLib</artifactId>
+            <version>1.2.9</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/MMOLib-1.2.9.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>worldedit.group</groupId>
+            <artifactId>WorldEdit</artifactId>
+            <version>6.1.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/WorldEdit-6.1.8.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>worldguard.group</groupId>
+            <artifactId>worldguard</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/worldguard-bukkit-6.2.2.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
+</project>

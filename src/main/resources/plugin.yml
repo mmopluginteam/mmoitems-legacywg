@@ -1,0 +1,8 @@
+author: Indyuce
+name: MMOItemsLegacyWG
+version: ${project.version}
+description: ${project.description}
+main: net.Indyuce.mmoitems.comp.worldguard.legacy.Main
+depend: [ MMOItems,WorldGuard ]
+commands: { }
+permissions: { }
